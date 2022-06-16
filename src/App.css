@@ -1,38 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
 .App {
-  text-align: center;
+  font-family: 'Kumbh Sans';
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Header {
+  padding: 10px 100px;
+  font-weight: 400;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header-container {
+  border-bottom: 1px solid hsl(220, 10%, 94%);
+  padding-bottom: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav a {
+  padding-left: 27px;
+  text-decoration: none;
+  color: hsl(219, 9%, 45%);
+}
+
+nav a:hover {
+  color: hsl(26, 100%, 55%);
+}
+
+.nav-btn {
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  visibility: hidden;
+  opacity: 0;
+  margin-right: 10px;
+}
+
+.avatar {
+  width: 35px;
+}
+
+.large-image {
+  border-radius: 10px;
+  width: 400px;
+}
+
+.carousel {
+  visibility: hidden;
+}
+
+.thumbnail img {
+  border-radius: 10px;
+  margin-right: 27px;
+  width: 80px;
+}
+
+.thumbnail:focus {
+  border: 4px solid hsl(25, 100%, 94%);
+  /* background-color: hsl(0, 0%, 0%); */
+}
+
+.description {
+  padding-top: 90px;
+}
+
+h5 {
+  color: hsl(26, 100%, 55%);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 13px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: hsl(220, 13%, 13%);
+  margin-bottom: 30px;
+}
+
+p {
+  color: hsl(219, 9%, 45%);
+  font-family: 400;
+  font-size: 1rem;
+}
+
+.discount {
+  color: hsl(220, 13%, 13%);
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+span {
+  color: hsl(26, 100%, 55%);
+  font-size: .875rem;
+  margin-left: 10px;
+  padding: 3px;
+  background-color: hsl(25, 100%, 94%);
+  border-radius: 5px;
+}
+
+.original-price {
+  margin-top: -10px;
+  font-size: .875rem;
+  font-weight: 700;
+}
+
+.add-btn {
+  padding: 10px 50px;
+  border-radius: 9px;
+  border: none;
+  background-color: hsl(26, 100%, 55%);
+  color:  hsl(0, 0%, 100%);
+}
+
+.add-btn:hover {
+  background-color: hsl(26, 94%, 41%);
+}
+
+.order-quantity {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  background-color: hsl(223, 64%, 98%);
+  padding: 8px;
+  border-radius: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.cart {
+  width: 22px;
+  margin-right: 10px;
+  margin-top: -5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.cart path {
+  fill: hsl(0, 0%, 100%);
+}
+
+@media only screen and (max-width: 1024px) {
+  .App {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .Header {
+    margin-left: -80px;
+    font-weight: 400;
   }
+
+  .header-container {
+    border-bottom: none;
+    margin-bottom: -180px;
+  }
+
+  .nav-btn {
+    background: transparent;
+    border: none;
+    outline: none;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    padding-right: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    background-color: hsl(26, 100%, 55%);
+    transition: 0.5s;
+    transform: translateY(-100vh);
+  }
+
+  nav a {
+    color: hsl(0, 0%, 100%);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .responsive_nav {
+    transform: none;
+  }
+
+  .nav-close-btn {
+    position: absolute;
+    top: 1.5rem;
+    right: 4rem;
+    color:hsl(0, 0%, 100%);
+  }
+
+  .ProductSection {
+    margin-top: 70px;
+  }
+
+  .large-image {
+    border-radius: 0;
+    width: 408px;
+    margin-left: -14px;
+  }
+
+  .carousel {
+    visibility: visible;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 180px 25px;
+  }
+
+  .previousIcon, .nextIcon {
+    border: none;
+    border-radius: 50%;
+    padding: 8px 15px;
+  }
+
+  .previousIcon-img {
+    width: 9px;
+    margin-top: -2px;
+  }
+
+  .nextIcon-img {
+    width: 10px;
+    margin-top: -2px;
+  }
+
+  .cart-avatar {
+    margin-left: 100px;
+    margin-top: -5px;
+  }
+
+  .description {
+    padding: 30px 30px 70px;
+  }
+
+  .price {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0 5px;
+  }
+
+  .discount {
+    font-size: 1.5rem;
+  }
+  
+  span {
+    font-size: 1rem;
+    padding: 5px;
+    margin-top: 45px;
+  }
+
+  .original-price {
+    margin-top: 8px;
+    font-size: 1rem;
+  }
+
+  .order-quantity {
+    margin-bottom: 15px;
+    width: 100%;
+    height: 55px;
+    padding: 13px 15px;
+  }
+
+  .add-btn {
+    width: 100%;
+    height: 55px;
+  }
+
+
+
+
+
+  
 }
