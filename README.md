@@ -1,3 +1,4 @@
+## An e-commerce product page built with React
 ## Link to page: https://snickers-product-page.netlify.app/
 
 
