@@ -39,7 +39,7 @@ const Header = () => {
                         <img src={cart} alt="cart" />
                     </div>
                     <div>
-                        <img src={avatar} alt="avatar" className="avatar ms-3"/>
+                        <img src={avatar} alt="avatar" className="avatar ms-4"/>
                     </div>
                 </div>
             </div>

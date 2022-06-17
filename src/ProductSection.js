@@ -1,10 +1,6 @@
-// import { Carousel } from 'react-responsive-carousel';
-import sneakers1 from './images/image-product-1.jpg';
-import thumbnail1 from './images/image-product-1-thumbnail.jpg';
-import thumbnail2 from './images/image-product-2-thumbnail.jpg';
-import thumbnail3 from './images/image-product-3-thumbnail.jpg';
-import thumbnail4 from './images/image-product-4-thumbnail.jpg';
 import { ReactComponent as Cart } from './images/icon-cart.svg';
+import { useState } from 'react';
+import { ProductImages } from './Images';
 import minusIcon from './images/icon-minus.svg';
 import plusIcon from './images/icon-plus.svg';
 import previousIcon from './images/icon-previous.svg'
@@ -13,26 +9,27 @@ import nextIcon from './images/icon-next.svg'
 
 const ProductSection = () => {
 
+    const [largeImage, setLargeImage] = useState(ProductImages[0]);
+
     return (
         <div className="ProductSection container p-lg-4">
             <div className="row">
                 <div className="image-section col">
-                    <div>
-                        <div className="carousel">
-                            <button className="previousIcon">
-                                <img src={previousIcon} alt="previous" className="previousIcon-img"/>
-                            </button>
-                            <button className="nextIcon">
-                                <img src={nextIcon} alt="next" className="nextIcon-img"/>
-                            </button>
-                        </div>
-                        <img src={sneakers1} alt="sneakers" className="large-image"/>
+                    <div className="carousel">
+                        <button className="previousIcon">
+                            <img src={previousIcon} alt="previous" className="previousIcon-img"/>
+                        </button>
+                        <button className="nextIcon">
+                            <img src={nextIcon} alt="next" className="nextIcon-img" />
+                        </button>
                     </div>
+                    <img src={largeImage} alt="sneakers" className="large-image" />
                     <div className="thumbnails mt-4 d-none d-lg-block">
-                        <a href="/#" className="thumbnail"><img src={thumbnail1} alt="thumbnail" /></a>
-                        <a href="/#" className="thumbnail"><img src={thumbnail2} alt="thumbnail" /></a>
-                        <a href="/#" className="thumbnail"><img src={thumbnail3} alt="thumbnail" /></a>
-                        <a href="/#" className="thumbnail"><img src={thumbnail4} alt="thumbnail" /></a>
+                        {ProductImages.map((img, index) => (
+                            <img style={{border: largeImage === img ? "3px solid hsl(26, 100%, 55%)" : "", opacity: largeImage === img ? "0.4" : "" }} 
+                            key={index} src={img} alt="sneakers" className="thumbnail" 
+                            onClick={() => {setLargeImage(img)}}/>
+                        ))}
                     </div>
                 </div>
 
@@ -59,7 +56,6 @@ const ProductSection = () => {
                             </div>
                             <div>
                                 <button className="add-btn ms-lg-3">
-                                    {/* <img src={cart} style={{fill:"#FFFFFF"}} alt="cart" className="cart" /> */}
                                     <Cart className="cart" />
                                     Add to cart
                                 </button>
