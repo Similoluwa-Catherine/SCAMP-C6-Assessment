@@ -10,6 +10,15 @@ import nextIcon from './images/icon-next.svg'
 const ProductSection = () => {
 
     const [largeImage, setLargeImage] = useState(ProductImages[0]);
+    const [count, setCount] = useState(0)
+
+    const handleIncrease = () => {
+        setCount((prevCount) => prevCount + 1 )
+    };
+
+    const handleDecrease = () => {
+        setCount((prevCount) => prevCount - 1 )
+    };
 
     return (
         <div className="ProductSection container p-lg-4">
@@ -44,13 +53,13 @@ const ProductSection = () => {
                     <div>
                         <div className="d-lg-flex">
                             <div className="order-quantity">
-                                <button className="border-0 bg-transparent">
+                                <button className="border-0 bg-transparent" onClick={handleDecrease}>
                                     <img src={minusIcon} alt="cart" className="minus"/>
                                 </button>
                                 <div className="ms-lg-3 mt-1">
-                                    <small className="fw-bold">0</small>
+                                    <small className="fw-bold">{count}</small>
                                 </div>
-                                <button className="border-0 bg-transparent ms-lg-3">
+                                <button className="border-0 bg-transparent ms-lg-3" onClick={handleIncrease}>
                                     <img src={plusIcon} alt="cart" className="plus"/>
                                 </button>
                             </div>
